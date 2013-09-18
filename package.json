@@ -1,0 +1,46 @@
+{
+  "name": "fluid-dw-build",
+  "version": "0.0.1",
+  "description": "Scaffold out a demandware fluid front-end web app",
+  "keywords": [
+    "web",
+    "app",
+    "front-end",
+    "modernizr"
+  ],
+  "private": true,
+  "homepage": "https://github.com/FluidInc/pum-unified",
+  "bugs": {
+    "url": "https://github.com/FluidInc/pum-unified/issues"
+  },
+  "author": "Fluid Engineering <eng@fluid.com>",
+  "contributors": [
+    {
+      "name": "Sami Khan",
+      "email": "skhan@fluid.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FluidInc/pum-unified.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.5.0",
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-imagemin": "~0.3.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "BSD"
+    }
+  ]
+}

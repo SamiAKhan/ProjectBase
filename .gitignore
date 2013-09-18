@@ -1,0 +1,20 @@
+#Puma Unified Repo
+sitegenesis/*
+fluidstorefront/*
+
+#Eclipse Demandware
+.DS_Store
+.metadata
+.prefs
+DemandwareServer*
+cartridges/DemandwareServer*
+
+# Build tool workspaces
+.grunt
+.sass-cache
+node_modules
+.log
+*.sublime-workspace
+
+# Guarantee that this file is always there
+!.gitignore
