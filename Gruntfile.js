@@ -152,7 +152,23 @@ module.exports = function(grunt) {
                     dest: demandware.cartridges.project + '/' + demandware.path.imagesDir + '-compressed/'
                 }]
             }
-        }
+        },
+        gitclone: {
+			fluid: {
+				options: {
+					repo: demandware.repos.fluid.clone,
+					branch: demandware.repos.fluid.branch,
+					directory: demandware.repos.fluid.directory
+				}
+			},
+			sitegenesis: {
+				options: {
+					repo: demandware.repos.sitegenesis.clone,
+					branch: demandware.repos.sitegenesis.branch,
+					directory: demandware.repos.sitegenesis.directory
+				}
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-compass');
@@ -162,9 +178,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-git');
 
 
     // Tasks
+	grunt.registerTask('clone', ['gitclone']);
+
 	grunt.registerTask('lint', ['jshint:project', 'csslint:project']);
 
 	grunt.registerTask('compress', ['imagemin:fluid', 'imagemin:project']);

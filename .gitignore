@@ -1,7 +1,6 @@
 #Repo Dependancy
-app_storefront_core
-app_storefront_richUI
-app_fluid
+fluidstorefront
+sitegenesis
 
 #Eclipse Demandware
 .DS_Store

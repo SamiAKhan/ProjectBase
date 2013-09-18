@@ -8,6 +8,19 @@
     "noLocale": "default"
   },
 
+  "repos": {
+    "fluid": {
+      "clone": "https://github.com/FluidInc/demandware-sitegenesis-fluid.git",
+      "branch": "simple",
+      "directory": "fluidstorefront"
+    },
+    "sitegenesis": {
+      "clone": "https://github.com/FluidInc/demandware-sitegenesis.git",
+      "branch": "release/13.5",
+      "directory": "sitegenesis"
+    }
+  },
+
   "cartridges": {
     "core": "sitegenesis/cartridges/app_storefront_core/cartridge",
     "richUI": "sitegenesis/cartridges/app_storefront_richUI/cartridge",
