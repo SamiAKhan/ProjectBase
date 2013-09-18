@@ -1,31 +1,31 @@
 {
   "server": {
-    "host": "dev04.store01.puma.demandware.net",
+    "host": "", //IE: fluid.alliance-prtnr-na01.dw.demandware.net
     "basePath": "on/demandware.store",
-    "site": "Sites-puma-Site",
+    "site": "", //IE: Sites-SiteGenesis-Site
     "panel": "Sites-Site",
     "defaultLocale": "en",
     "noLocale": "default"
   },
 
   "repos": {
+    "sitegenesis": {
+      "clone": "https://github.com/FluidInc/demandware-sitegenesis.git",
+      "branch": "release/13.5",
+      "directory": "sitegenesis"
+    },
     "fluid": {
       "clone": "https://github.com/FluidInc/demandware-sitegenesis-fluid.git",
       "branch": "simple",
       "directory": "fluidstorefront"
     },
-    "sitegenesis": {
-      "clone": "https://github.com/FluidInc/demandware-sitegenesis.git",
-      "branch": "release/13.5",
-      "directory": "sitegenesis"
-    }
   },
 
   "cartridges": {
     "core": "sitegenesis/cartridges/app_storefront_core/cartridge",
     "richUI": "sitegenesis/cartridges/app_storefront_richUI/cartridge",
     "fluid": "fluidstorefront/cartridges/app_fluid/cartridge",
-    "project": "cartridges/app_puma_unified/cartridge"
+    "project": "" // IE: cartridges/app_project/cartridge
   },
 
   "path": {
