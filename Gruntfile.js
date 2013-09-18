@@ -156,14 +156,14 @@ module.exports = function(grunt) {
         gitclone: {
 			fluid: {
 				options: {
-					repo: demandware.repos.fluid.clone,
+					repository: demandware.repos.fluid.clone,
 					branch: demandware.repos.fluid.branch,
 					directory: demandware.repos.fluid.directory
 				}
 			},
 			sitegenesis: {
 				options: {
-					repo: demandware.repos.sitegenesis.clone,
+					repository: demandware.repos.sitegenesis.clone,
 					branch: demandware.repos.sitegenesis.branch,
 					directory: demandware.repos.sitegenesis.directory
 				}
