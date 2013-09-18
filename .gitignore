@@ -1,6 +1,7 @@
-#Puma Unified Repo
-sitegenesis/*
-fluidstorefront/*
+#Repo Dependancy
+app_storefront_core
+app_storefront_richUI
+app_fluid
 
 #Eclipse Demandware
 .DS_Store
