@@ -9,20 +9,24 @@
     "modernizr"
   ],
   "private": true,
-  "homepage": "https://github.com/FluidInc/pum-unified",
+  "homepage": "https://github.com/FluidInc/mic-demandware",
   "bugs": {
-    "url": "https://github.com/FluidInc/pum-unified/issues"
+    "url": "https://github.com/FluidInc/mic-demandware/issues"
   },
   "author": "Fluid Engineering <eng@fluid.com>",
   "contributors": [
     {
       "name": "Sami Khan",
       "email": "skhan@fluid.com"
+    },
+    {
+      "name": "Seamus Roche",
+      "email": "sroche@fluid.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/FluidInc/pum-unified.git"
+    "url": "https://github.com/FluidInc/mic-demandware.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

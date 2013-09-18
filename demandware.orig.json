@@ -1,8 +1,8 @@
 {
   "server": {
-    "host": "dev1.web.michaels.demandware.net",
+    "host": "", //IE: fluid.alliance-prtnr-na01.dw.demandware.net
     "basePath": "on/demandware.store",
-    "site": "Sites-beyond-Site",
+    "site": "", //IE: Sites-SiteGenesis-Site
     "panel": "Sites-Site",
     "defaultLocale": "en",
     "noLocale": "default"
