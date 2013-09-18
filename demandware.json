@@ -4,6 +4,7 @@
     "basePath": "on/demandware.store",
     "site": "Sites-beyond-Site",
     "panel": "Sites-Site",
+    "projectName": "michaels",
     "defaultLocale": "en",
     "noLocale": "default"
   },
@@ -18,14 +19,14 @@
       "clone": "https://github.com/FluidInc/demandware-sitegenesis-fluid.git",
       "branch": "simple",
       "directory": "fluidstorefront"
-    },
+    }
   },
 
   "cartridges": {
     "core": "sitegenesis/cartridges/app_storefront_core/cartridge",
     "richUI": "sitegenesis/cartridges/app_storefront_richUI/cartridge",
     "fluid": "fluidstorefront/cartridges/app_fluid/cartridge",
-    "project": "" // IE: cartridges/app_project/cartridge
+    "project": "cartridges/app_michaels/cartridge"
   },
 
   "path": {

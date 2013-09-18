@@ -19,8 +19,7 @@ module.exports = function(grunt) {
 				options: {
 					sassDir: demandware.cartridges.fluid + '/' + demandware.path.scssDir
 				}
-			},
-			project: {}
+			}
 		},
 		csslint: {
 			options: {
@@ -99,7 +98,7 @@ module.exports = function(grunt) {
 			},
 			projectapp: {
 				src: [demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app/{,*/}*.js'],
-				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app-puma.js'
+				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app-' + demandware.server.projectName + '.js'
 			},
 			projectglobal: {
 				src: [demandware.cartridges.project + '/' + demandware.path.scriptDir + '/global/{,*/}*.js'],
