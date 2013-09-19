@@ -19,6 +19,8 @@ module.exports = function(grunt) {
 				options: {
 					sassDir: demandware.cartridges.fluid + '/' + demandware.path.scssDir
 				}
+			},
+			project: {
 			}
 		},
 		csslint: {
