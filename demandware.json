@@ -16,7 +16,7 @@
     },
     "fluid": {
       "clone": "https://github.com/FluidInc/demandware-sitegenesis-fluid.git",
-      "branch": "simple",
+      "branch": "master",
       "directory": "fluidstorefront"
     }
   },
