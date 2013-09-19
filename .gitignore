@@ -16,6 +16,8 @@ node_modules
 .log
 *.sublime-project
 *.sublime-workspace
+cartridges/**/cartridge/static/default/css
+RemoteSystemsTempFiles
 
 # Guarantee that this file is always there
 !.gitignore

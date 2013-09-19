@@ -4,7 +4,6 @@
     "basePath": "on/demandware.store",
     "site": "Sites-beyond-Site",
     "panel": "Sites-Site",
-    "projectName": "michaels",
     "defaultLocale": "en",
     "noLocale": "default"
   },

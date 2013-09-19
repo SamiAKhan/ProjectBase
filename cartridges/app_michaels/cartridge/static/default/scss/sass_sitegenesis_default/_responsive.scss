@@ -1,0 +1,73 @@
+/*
+*	AS IS SG2 BREAKPOINTS
+*	@TODO: Refactor within client project	
+*/
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	body {
+		background: #333;
+	}
+	#wrapper {
+		width: 960px;
+	}
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	body {
+		background: red;
+	}
+	#wrapper {
+		width: 760px;
+	}
+	#primary {
+		width: 588px;
+	}
+	.pt_product-details #primary {
+		width: 100%;
+	}
+	#secondary {
+		width:167px;
+	}
+	.col-1,.col-2 {
+		float:none;
+		width:100%;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	body {
+		background: orange;
+	}
+	#wrapper {
+		width: 480px;
+	}
+	#primary {
+		width: 100%;
+	}
+	.pt_product-details #primary {
+		width: 100%;
+	}
+	#secondary {
+		width: 160px;
+	}
+	.col-1,.col-2{
+		float:none;
+		width:100%;
+	}
+	.pdp-main .product-col-1,
+	.pdp-main .product-col-2,
+	.pdp-main .product-name	 {clear:both;float:none;margin:0;width:100%;text-align:center;}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body {
+		background: yellow;
+	}
+	#wrapper {
+		width: 320px;
+	}
+}

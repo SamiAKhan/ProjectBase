@@ -1,0 +1,11 @@
+// style.scss
+// Importing SiteGenesis 2 styles
+@import 'sass_sitegenesis_default/style';
+@import 'sass_sitegenesis_default/responsive';
+
+// TODO: The style.scss is currently our cleaned up SG2 css...
+// Refactor into agreed upon scss files per CSS JS Breakdown
+@import 'global';
+// TODO: Use responsive.scss from brand specific cartridge and get rid of this one.
+@import 'responsive';
+@import 'forms'

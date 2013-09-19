@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 			},
 			projectapp: {
 				src: [demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app/{,*/}*.js'],
-				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app-' + demandware.server.projectName + '.js'
+				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app-custom.js'
 			},
 			projectglobal: {
 				src: [demandware.cartridges.project + '/' + demandware.path.scriptDir + '/global/{,*/}*.js'],
