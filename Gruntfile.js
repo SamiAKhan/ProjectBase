@@ -5,22 +5,84 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		copy: {
+			scssFlatten: {
+				files: [
+					{
+						expand: true,
+						cwd: demandware.cartridges.fluid + '/' + demandware.path.scssDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-scss'
+					},
+					{
+						expand: true,
+						cwd: demandware.cartridges.project + '/' + demandware.path.scssDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-scss'
+					}
+				]
+			},
+			jsFlatten: {
+				files: [
+					{
+						expand: true,
+						cwd: demandware.cartridges.fluid + '/' + demandware.path.cscriptDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-js'
+					},
+					{
+						expand: true,
+						cwd: demandware.cartridges.project + '/' + demandware.path.cscriptDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-js'
+					}
+				]
+			},
+			imgFlatten: {
+				files: [
+					{
+						expand: true,
+						cwd: demandware.cartridges.core + '/' + demandware.path.imagesDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-img'
+					},
+					{
+						expand: true,
+						cwd: demandware.cartridges.richUI + '/' + demandware.path.imagesDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-img'
+					},
+					{
+						expand: true,
+						cwd: demandware.cartridges.fluid + '/' + demandware.path.imagesDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-img'
+					},
+					{
+						expand: true,
+						cwd: demandware.cartridges.project + '/' + demandware.path.imagesDir,
+						src: ['**'],
+						dest: demandware.cartridges.project + '/.tmp-img'
+					}
+				]
+			}
+		},
+		clean: {
+			scss: [demandware.cartridges.project + '/.tmp-scss'],
+			js: [demandware.cartridges.project + '/.tmp-js'],
+			img: [demandware.cartridges.project + '/.tmp-img']
+		},
 		compass: {
 			options: {
-				sassDir: demandware.cartridges.project + '/' + demandware.path.scssDir,
-				cssDir: demandware.cartridges.project + '/' + demandware.path.cssDir,
+				sassDir: demandware.cartridges.project + '/.tmp-scss',
+				cssDir: demandware.cartridges.project + '/' + demandware.path.cssDir + '/custom-compile',
 				imagesDir: demandware.cartridges.project + '/' + demandware.path.imagesDir,
 				javascriptsDir: demandware.cartridges.project + '/' + demandware.path.scriptsDir,
 				fontsDir: demandware.cartridges.project + '/' + demandware.path.fontsDir,
 				relativeAssets: true,
 				outputStyle: 'expanded'
 			},
-			fluid: {
-				options: {
-					sassDir: demandware.cartridges.fluid + '/' + demandware.path.scssDir
-				}
-			},
-			project: {}
+			scss: {}
 		},
 		csslint: {
 			options: {
@@ -93,17 +155,13 @@ module.exports = function(grunt) {
 					return '// Source: ' + filepath + '\n' + src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
 				}
 			},
-			fluidapp: {
-				src: [demandware.cartridges.fluid + '/' + demandware.path.scriptDir + '/app/{,*/}*.js'],
-				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app-fluid.js'
+			appjs: {
+				src: [demandware.cartridges.project + '/.tmp-js/app/{,*/}*.js'],
+				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/custom-compile/app.js'
 			},
-			projectapp: {
-				src: [demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app/{,*/}*.js'],
-				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/app-puma.js'
-			},
-			projectglobal: {
-				src: [demandware.cartridges.project + '/' + demandware.path.scriptDir + '/global/{,*/}*.js'],
-				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/global.js'
+			globaljs: {
+				src: [demandware.cartridges.project + '/.tmp-js/global/{,*/}*.js'],
+				dest: demandware.cartridges.project + '/' + demandware.path.scriptDir + '/custom-compile/global.js'
 			}
 		},
 		watch: {
@@ -136,20 +194,12 @@ module.exports = function(grunt) {
 			options: {
 				optimizationLevel: 3
 			},
-            fluid: {
+            img: {
                 files: [{
                     expand: true,
-                    cwd: demandware.cartridges.fluid + '/' + demandware.path.imagesDir + '/',
+                    cwd: demandware.cartridges.project + '/.tmp-img',
                     src: '{,**/}*.{png,jpg,jpeg}',
-                    dest: demandware.cartridges.project + '/' + demandware.path.imagesDir + '-compressed/'
-                }]
-            },
-            project: {
-                files: [{
-                    expand: true,
-                    cwd: demandware.cartridges.project + '/' + demandware.path.imagesDir + '/',
-                    src: '{,**/}*.{png,jpg,jpeg}',
-                    dest: demandware.cartridges.project + '/' + demandware.path.imagesDir + '-compressed/'
+                    dest: demandware.cartridges.project + '/' + demandware.path.imagesDir + '/custom-compress'
                 }]
             }
         },
@@ -171,6 +221,8 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -186,15 +238,14 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('lint', ['jshint:project', 'csslint:project']);
 
-	grunt.registerTask('compress', ['imagemin:fluid', 'imagemin:project']);
+	grunt.registerTask('compress-img', ['clean:img', 'copy:imgFlatten', 'imagemin:img', 'clean:img']);
+    grunt.registerTask('compress', ['compress-img']);
 
-	grunt.registerTask('compile-sass', ['compass:fluid', 'compass:project']);
+	grunt.registerTask('compile-sass', ['clean:scss', 'copy:scssFlatten', 'compass:scss', 'clean:scss']);
+	grunt.registerTask('compile-js', ['clean:js', 'copy:jsFlatten', 'concat:appjs', 'concat:globaljs', 'clean:js']);
+    grunt.registerTask('compile', ['compile-sass', 'compile-js']);
 
-	grunt.registerTask('compile-js', ['concat:fluidapp', 'concat:projectapp', 'concat:projectglobal']);
+    grunt.registerTask('server', ['compile', 'compress', 'watch']);
 
-    grunt.registerTask('compile', ['compile-sass', 'compile-js', 'compress']);
-
-    grunt.registerTask('server', ['compile', 'watch']);
-
-    grunt.registerTask('default', ['server', 'open:login', 'open:project']);
+    grunt.registerTask('default', ['compile', 'open:login', 'open:project', 'watch']);
 };

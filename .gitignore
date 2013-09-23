@@ -1,6 +1,8 @@
 #Repo Dependancy
 fluidstorefront
 sitegenesis
+custom-compile
+custom-compress
 
 #Eclipse Demandware
 .DS_Store
